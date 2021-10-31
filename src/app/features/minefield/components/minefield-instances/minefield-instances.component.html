@@ -1,0 +1,101 @@
+<div class="card card-memory">
+
+  <div class="card-header d-flex justify-content-between">
+    <span>{{ 'features.minefield.lobby.title' | translate }}</span>
+    <div *ngIf="instances.length">
+      <div *appHasRole="[roles.ADMIN]">
+        <button type="button" class="btn btn-sm minefield-btn" (click)="newHandler()">
+          <i class="fa fa-plus"></i>
+          {{ 'features.minefield.lobby.new_configuration' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body pb-0 navbar-nav-scroll">
+    <div class="row">
+      <div class="text text-center col-12 p-3 mb-4" *ngIf="!instances.length">
+        <p><span class="fa fa-gamepad fa-4x"></span></p>
+        <div *appHasRole="[roles.ADMIN]">
+          <p>{{ 'features.minefield.lobby.no_instances' | translate }}</p>
+          <button type="button" class="btn btn-sm btn-warning" (click)="newHandler()">
+            <i class="fa fa-plus"></i>
+            {{ 'features.minefield.lobby.new_configuration' | translate }}
+          </button>
+        </div>
+        <div *appHasRole="[roles.GAMER]">
+          <p>{{ 'features.minefield.lobby.no_instances' | translate }}</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 col-12 mb-4" *ngFor="let instance of instances">
+
+        <div class="instance">
+          <div class="card text-center">
+
+            <div class="card-header bg-transparent p-0">
+              <img src="../../../../../assets/images/games/minefield/home.jpg" class="card-img-top" alt="minefield">
+            </div>
+
+            <div class="card-body ">
+              <h5 class="card-title">{{ instance.name }}</h5>
+              <hr>
+              <span class="card-text text-info">
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <div ngSwitch="{{instance.level}}">
+                      <span class="badge badge-danger" *ngSwitchCase="levels.HARD">
+                        {{ 'features.minefield.lobby.level.hard' | translate }}
+                      </span>
+                      <span class="badge badge-warning" *ngSwitchCase="levels.MEDIUM">
+                        {{ 'features.minefield.lobby.level.medium' | translate }}
+                      </span>
+                      <span class="badge badge-success" *ngSwitchCase="levels.EASY">
+                        {{ 'features.minefield.lobby.level.easy' | translate }}
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa fa-square-o" aria-hidden="true"></i>
+                    {{instance.columns}} x {{instance.columns}}
+                  </li>
+                  <li>
+                    <span class="fa fa-heart text-danger">
+                     {{this.instance.life}}
+                  </span>
+                    <span class="ml-4 fa fa-diamond text-warning">
+                    {{ this.instance.treasures }}
+                  </span>
+                  </li>
+                </ul>
+              </span>
+            </div>
+
+            <div class="card-footer">
+              <div *appHasRole="[roles.ADMIN]">
+                <button type="button" class="btn btn-primary btn-sm" (click)="playHandler(instance.id)">
+                  <i class="fa fa-play"></i>
+                </button>
+                <button type="button" class="btn btn-warning btn-sm ml-2" (click)="editHandler(instance)">
+                  <i class="fa fa-pencil"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-sm ml-2" (click)="deleteHandler(instance.id)">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </div>
+              <div *appHasRole="[roles.GAMER]">
+                <button type="button" class="btn btn-primary width-100" (click)="playHandler(instance.id)">
+                  <i class="fa fa-play"></i>
+                  {{ 'components.buttons.play' | translate }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <small [innerHTML]="'features.minefield.lobby.card_footer' | translate"></small>
+  </div>
+</div>

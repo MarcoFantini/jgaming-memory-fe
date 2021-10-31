@@ -1,0 +1,36 @@
+@import "../../../../../styles/palette-default";
+
+.menu {
+  background: $default-menu-bg;
+  color: $default-menu-text;
+
+  img {
+    width: 40px;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    left: 5px;
+
+    &.btn {
+      line-height: 10px;
+    }
+  }
+
+  .navbar-brand {
+    color: $default-menu-text;
+    letter-spacing: 32px;
+    font-size: 30px;
+  }
+
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        color: $default-menu-text;
+      }
+    }
+  }
+}

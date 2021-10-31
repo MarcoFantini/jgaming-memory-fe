@@ -1,0 +1,37 @@
+@import "../../../../../styles/palette-memory";
+
+html {
+  overflow-x: hidden;
+}
+
+.card-memory {
+
+  .card-header {
+    > span {
+      line-height: 30px;
+    }
+  }
+
+  .card-body {
+    .text {
+      border: 1px solid black;
+    }
+  }
+}
+
+.instance {
+  &:hover {
+    box-shadow: 0 0 16px 7px rgba(0, 0, 0, 0.35);
+    animation-name: card-shadow;
+    animation-duration: 0.1s;
+  }
+
+  @keyframes card-shadow {
+    from {
+      box-shadow: none;
+    }
+    to {
+      box-shadow: 0 0 16px 10px rgba(0, 0, 0, 0.35);
+    }
+  }
+}

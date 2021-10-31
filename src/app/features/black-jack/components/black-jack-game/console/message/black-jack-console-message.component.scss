@@ -1,0 +1,40 @@
+.message {
+  position: relative;
+  animation: insert 1s cubic-bezier(0,.98,.3,1), dissolve 2s 3s forwards ;
+
+  &--red {
+    color: red;
+  }
+
+  &--green {
+    color: green;
+  }
+
+  &--yellow {
+    color: yellow;
+  }
+
+  &--purple {
+    color: #BC5DB9;
+  }
+}
+
+@keyframes dissolve {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes insert {
+  from {
+    opacity: 0;
+    right: -400px;
+  }
+  to {
+    opacity: 1;
+    right: 0px;
+  }
+}

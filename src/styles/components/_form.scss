@@ -1,0 +1,15 @@
+form {
+  background-color: $default-form-bg;
+
+  .form-control:focus {
+    border-color: $default-form-focus-border;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(255 72 0 / 25%);
+  }
+
+  .required:after {
+    content: "*";
+    color: $default-required;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,11 @@
+<div #console class="container d-flex flex-column border h-100 overflow-hidden">
+  <div class="row">
+    <div class="col d-flex flex-column-reverse">
+      <div class="row" *ngFor="let message of messages">
+        <div class="col">
+          <app-blackjack-console-message [text]="message.text" [color]="message.color"></app-blackjack-console-message>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+<div *ngIf="inPlay" class="balance-anim" [class.balance-anim--red]="money < 0" [class.balance-anim--green]="money > 0">
+  {{money | AddSignToMoney}}
+</div>

@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header card-header-{{this.gameType.toLowerCase()}}">
+    {{'components.layout.rank.header.ranking' | translate}}
+  </div>
+  <div class="card-body">
+    <table class="table table-sm" [ngClass]="this.gameTableClass">
+      <thead>
+      <tr>
+        <th scope="col">{{'components.layout.rank.header.index' | translate}}</th>
+        <th scope="col" >{{'components.layout.rank.header.username' | translate}}</th>
+        <th scope="col">{{'components.layout.rank.header.score' | translate}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let rank of ranks; let i=index">
+        <td scope="row">{{ i+1 }}</td>
+        <td>{{rank.username}}</td>
+        <td>{{rank.score}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

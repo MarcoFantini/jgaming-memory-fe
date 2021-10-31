@@ -1,0 +1,34 @@
+<div class="modal-header" [ngClass]="modalHeaderClass">
+  <h4 class="text-center">{{modalHeaderClass.charAt(0).toUpperCase() + modalHeaderClass.substr(1)}}</h4>
+  <button type="button" class="close-notify" aria-label="Close" (click)="confirmHandler()">
+    <span aria-hidden="true">x</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div [ngSwitch]="callMode">
+    <div *ngSwitchCase="callModes.NEW_INSTANCE">
+      <p>
+        {{'components.modals.notify.new_instance' | translate}}
+      </p>
+      <button type="button" class="btn" [ngClass]="modalButtonClass" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">OK</span>
+      </button>
+    </div>
+    <div *ngSwitchCase="callModes.EDIT_INSTANCE">
+      <p>
+        {{'components.modals.notify.edit_instance' | translate}}
+      </p>
+      <button type="button" class="btn btn-success w-25" (click)="confirmHandler()">
+        <span aria-hidden="true">OK</span>
+      </button>
+    </div>
+    <div *ngSwitchCase="callModes.DUPLICATE">
+      <p>
+        {{'components.modals.notify.duplicate' | translate}}
+      </p>
+      <button type="button" class="btn btn-success w-25" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">OK</span>
+      </button>
+    </div>
+  </div>
+</div>

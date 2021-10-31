@@ -1,0 +1,15 @@
+#toast-container {
+  > div {
+    opacity: 1;
+  }
+
+  .toast-error, .toast-warning {
+    color: $default-toast-text;
+    @include box_shadow(0 1px 6px rgba(0,0,0,0.4));
+  }
+
+  .toast-error {
+    background-color: $default-toast-error-bg;
+    border-color: $default-toast-error-border;
+  }
+}

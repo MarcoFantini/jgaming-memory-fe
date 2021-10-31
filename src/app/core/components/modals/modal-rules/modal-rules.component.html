@@ -1,0 +1,13 @@
+<div class="modal-header" [ngClass]="currentGameType.toLowerCase()">
+  <h4 class="modal-title pull-left">{{'components.modals.rules.title'|translate}}</h4>
+  <button type="button" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div [ngSwitch]="currentGameType">
+    <div *ngSwitchCase="gameTypes.MINEFIELD">{{'features.minefield.settings.rules' | translate}}</div>
+    <div *ngSwitchCase="gameTypes.MEMORY">{{'features.memory.settings.rules' | translate}}</div>
+    <div *ngSwitchCase="gameTypes.BLACKJACK">{{'features.black-jack.settings.rules' | translate}}</div>
+  </div>
+</div>

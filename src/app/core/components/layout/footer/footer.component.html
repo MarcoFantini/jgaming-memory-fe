@@ -1,0 +1,41 @@
+<footer class="d-flex justify-content-between bg-white">
+    <div>
+        <small class="text-muted" [innerHTML]="'components.layout.footer.text' | translate"></small>
+    </div>
+    <div class="social text-right">
+        <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+                <a [href]="'components.layout.footer.social.facebook.url' | translate"
+                   [tooltip]="'components.layout.footer.social.facebook.title' | translate"
+                   target="_blank" class="inverse"
+                >
+                    <i class="fa fa-facebook-square fa-2x"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a [href]="'components.layout.footer.social.twitter.url' | translate"
+                   [tooltip]="'components.layout.footer.social.twitter.title' | translate"
+                   target="_blank" class="inverse"
+                >
+                    <i class="fa fa-twitter-square fa-2x"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a [href]="'components.layout.footer.social.pinterest.url' | translate"
+                   [tooltip]="'components.layout.footer.social.pinterest.title' | translate"
+                   target="_blank" class="inverse"
+                >
+                    <i class="fa fa-pinterest-square fa-2x"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a [href]="'components.layout.footer.social.linkedin.url' | translate"
+                   [tooltip]="'components.layout.footer.social.linkedin.title' | translate"
+                   placement="top" [adaptivePosition]="false" target="_blank" class="inverse"
+                >
+                    <i class="fa fa-linkedin-square fa-2x"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>

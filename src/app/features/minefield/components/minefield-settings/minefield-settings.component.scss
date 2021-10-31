@@ -1,0 +1,25 @@
+@import "../../../../../styles/palette-minefield";
+
+.card {
+  .card-header {
+    background: $minefield-card-header-bg;
+    color: $minefield-card-header-text;
+  }
+  .card-body {
+    label {
+      color: $minefield-card-body-text;
+
+      &.required:after {
+        content: "*";
+        color: $minefield-required;
+        font-weight: bold;
+      }
+    }
+  }
+  .card-footer{
+    background-color:$minefield-card-footer-bg;
+  }
+}
+
+
+

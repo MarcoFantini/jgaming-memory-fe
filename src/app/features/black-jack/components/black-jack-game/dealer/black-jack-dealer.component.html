@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header px-2 py-0 d-flex justify-content-center">
+    DEALER
+  </div>
+  <div class="card-body p-2">
+    <div class="row no-gutters">
+      <div class="col dealer-cards-container p-0" [style.min-width]="computeMinWidth()">
+        <div class="row no-gutters">
+          <div class="col" *ngFor="let card of dealer.cards" [style.max-width]="'50px'">
+            <app-blackjack-card [card]="card"></app-blackjack-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

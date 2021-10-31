@@ -1,0 +1,73 @@
+main.minefield {
+  background: $minefield-page-bg;
+
+  .card {
+    &.card-minefield, &.card-rank {
+
+      .card-header {
+        background-color: $minefield-card-header-bg;
+        color: $minefield-card-header-text;
+        min-height: 55px;
+        line-height: 31px;
+      }
+
+      .card-body {
+        color: $minefield-card-body-text;
+      }
+
+      .card-footer {
+        background-color: $minefield-card-footer-bg;
+        color: $minefield-card-footer-text;
+      }
+    }
+  }
+
+  form {
+    .form-control:focus {
+      border-color: $minefield-form-focus-border;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgb(36 153 206 / 25%);
+    }
+
+    &.required:after {
+      content: "*";
+      color: $minefield-required;
+      font-weight: bold;
+    }
+  }
+
+  .btn {
+    &.minefield-btn {
+      background: $minefield-button-bg;
+      border-color: $minefield-button-border;
+
+      &:hover, &:focus, &:active, &.active {
+        background: $minefield-button-bg-hover;
+        border-color: $minefield-button-border-hover;
+      }
+    }
+  }
+
+  .minefield-text {
+    color: $minefield-text;
+  }
+
+  .minefield-text-dark {
+    color: $minefield-text-dark;
+  }
+
+  ::-webkit-scrollbar {
+    background-color: $minefield-scrollbar-bg;
+    width: 3px;
+    height: 3px;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $minefield-scrollbar-bg-active;
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3);
+  }
+}

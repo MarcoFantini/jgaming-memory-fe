@@ -1,0 +1,27 @@
+/* BASE COLORS */
+$color-error: red;
+$color-error-shadow: rgba(255, 0, 0, 0.25);
+
+$color-1: #FF4800;
+$color-2: gray;
+$color-3: #fff;
+
+$default-required: $color-1;
+$default-body-bg: $color-3;
+$default-menu-bg: $color-3;
+$default-menu-text: $color-1;
+$default-footer-color: $color-1;
+$default-text-theme: $color-1;
+$default-form-bg: $color-3;
+$default-form-focus-border: $color-1;
+$default-button-bg: $color-1;
+$default-button-text: $color-3;
+$default-button-border: $color-1;
+$default-button-bg-hover: $color-1;
+$default-button-text-hover: $color-3;
+$default-button-border-hover: $color-1;
+$default-button-bg-selected: $color-2;
+$default-button-text-selected: $color-3;
+$default-button-border-selected: $color-2;
+$default-scrollbar-bg: $color-2;
+$default-scrollbar-bg-active: $color-1;

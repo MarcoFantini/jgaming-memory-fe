@@ -1,0 +1,26 @@
+<nav class="menu navbar navbar-expand" [ngClass]="menuClass">
+    <a class="navbar-brand" href="#">
+        <img src="favicon.ico" class="img-fluid" alt="icon">
+        <strong class="pl-3">{{ 'components.layout.menu.title' | translate }}</strong>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="list-unstyled list-inline ml-auto mb-0">
+            <li class="list-inline-item">
+                <button type="button" (click)="showRules()" class="btn" [ngClass]="buttonClass">
+                    <i class="fa fa-book"></i>
+                    {{ 'components.buttons.rules' | translate }}
+                </button>
+            </li>
+            <li class="list-inline-item" *ngIf="!hideHome">
+                <a class="btn" [ngClass]="buttonClass" [routerLink]="['/']">
+                    <i class="fa fa-home"></i>
+                    {{ 'components.buttons.home' | translate }}
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

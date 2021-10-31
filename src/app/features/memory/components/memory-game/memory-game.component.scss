@@ -1,0 +1,72 @@
+@import "../../../../../styles/palette-memory";
+
+.card-memory {
+
+  .card-body {
+    table {
+      position: relative;
+      margin: 0 auto;
+      text-align: center;
+      border: none;
+
+      tr {
+        position: relative;
+        margin: 0 auto;
+        text-align: center;
+        border: none;
+
+        td {
+          position: relative;
+          margin: 0 auto;
+          text-align: center;
+          border: none;
+
+          img {
+            border-radius: 15px;
+            width: 64px;
+            height: 62px;
+          }
+
+          .image-stack {
+            display: grid;
+            position: relative;
+
+            .item-top {
+              grid-column: 1 / span 10;
+              grid-row: 1; // deve trovarsi sulla stessa riga dell'altra immagine
+              padding-top: 0; // ciò spinge l'immagine verso il basso e la mantiene proporzionale durante il ridimensionamento
+              z-index: 1; // visualizza questa  immagine davanti dello sfondo
+
+              .drupal {
+                opacity: 0.6;
+              }
+
+              button {
+                background: none;
+                color: inherit;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                width: 64px;
+                height: 62px;
+                border-radius: 100px;
+              }
+            }
+
+            .item-bottom {
+              grid-column: 4 / -1;
+              grid-row: 1; // visualizza questa immagine sulla stessa riga
+
+            }
+
+            .bugfix {
+              margin-left: 5px;
+              margin-top: 1px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

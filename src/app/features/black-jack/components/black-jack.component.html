@@ -1,0 +1,20 @@
+<div id="black-jack-page">
+  <app-menu-game
+          [gameType]="gameType"
+  >
+  </app-menu-game>
+  <div class="container-fluid mt-3">
+    <div class="row p-3">
+      <div class="col" *ngIf="!isConnected">
+        <button type="button" class="btn blackjack-btn" (click)="onClickConnect()">CONNETTI</button>
+      </div>
+      <div class="col">
+        <app-black-jack-game *ngIf="isConnected"></app-black-jack-game>
+      </div>
+      <div class="col-auto" *ngIf="!isConnected">
+        <app-rank [gameType]="gameType"></app-rank>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer-game [gameType]="gameType"></app-footer-game>

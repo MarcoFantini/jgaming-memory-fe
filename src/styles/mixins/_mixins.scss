@@ -1,0 +1,24 @@
+@mixin no_outline {
+  outline: 0;
+  box-shadow: none;
+}
+
+@mixin border_box {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+@mixin box_shadow($shadow) {
+  -moz-box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin cursor_disabled {
+  cursor: not-allowed;
+}
+
+@mixin cursor_pointer {
+  cursor: pointer;
+}

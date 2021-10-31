@@ -1,0 +1,28 @@
+<div id="container">
+    <div class="container-fluid">
+        <div class="row mt-3 text-center">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <button type="button" class="btn btn-custom mr-2"
+                                *ngFor="let category of categories"
+                                (click)="filterHandler(category)"
+                                [ngClass]="{ 'selected': category === selectedCategory }"
+                        >
+                            {{ category }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 text-center mt-3"
+                 *ngFor="let game of games">
+                <img [routerLink]="[game.toLowerCase()]"
+                     [src]="'assets/images/games/' + game.toLowerCase() + '/home.jpg'"
+                     [alt]="game.toLowerCase()"
+                     class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>

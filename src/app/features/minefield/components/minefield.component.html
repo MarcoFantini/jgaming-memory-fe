@@ -1,0 +1,48 @@
+<div id="minefield-page">
+  <app-menu-game
+    [hideHome]="pageStatus !== pageStatuses.LOBBY"
+    [gameType]="gameType"
+  >
+  </app-menu-game>
+  <div class="container-fluid mt-3">
+    <div class="row" *ngIf="pageStatus === pageStatuses.LOBBY">
+      <div class="col-8">
+        <app-minefield-instances
+          [instances]="instances"
+          (new)="newHandler()"
+          (edit)="editHandler($event)"
+          (delete)="deleteHandler($event)"
+          (play)="playHandler($event)"
+        >
+        </app-minefield-instances>
+      </div>
+      <div class="col-4">
+        <app-rank [gameType]="gameType"></app-rank>
+      </div>
+    </div>
+    <div class="row" *ngIf="pageStatus === pageStatuses.CONFIGURATION">
+      <div class="col-12">
+        <app-minefield-settings
+          (back)="backHandler()"
+          (save)="saveInstance($event)"
+          (edit)="editInstance($event)"
+          [instance]="selectedInstance"
+        >
+        </app-minefield-settings>
+      </div>
+    </div>
+    <div class="row" *ngIf="pageStatus === pageStatuses.GAME">
+      <div class="col-12">
+        <app-minefield-game
+          (back)="backHandler()"
+          (saveRank)="saveRank($event)"
+          [gameType]="this.gameType"
+          [loggedUser]="loggedUser"
+          [game]="game"
+        >
+        </app-minefield-game>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer-game [gameType]="gameType"></app-footer-game>

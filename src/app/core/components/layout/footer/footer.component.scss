@@ -1,0 +1,9 @@
+@import "../../../../../styles/palette-default";
+
+footer {
+  padding: 0.5rem 1rem;
+
+  i {
+    color: $default-footer-color;
+  }
+}

@@ -1,0 +1,6 @@
+<div>
+  <div class="d-inline-block mr-2">
+    <img [style.max-width]="'32px'" src="/assets/images/games/blackjack/coins.png" alt="pot">
+  </div>
+  <div class="d-inline-block" *ngIf="game.round">{{game.round.pot}}</div>
+</div>

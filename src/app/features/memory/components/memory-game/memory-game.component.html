@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center">
+  <div class="card card-memory bg-transparent">
+    <div class="card-header text-center">
+      <button name="surrender" class="btn mr-3 btn-outline-warning rounded-circle"
+              tooltip="{{'features.memory.surrender' | translate}}"
+              (click)="surrender()">
+        <span class="fa fa-flag fa-2x"></span>
+      </button>
+      <button *appHasRole="[roles.ADMIN]"
+              name="inspectionMode" class="btn mr-3 btn-outline-warning rounded-circle"
+              tooltip="{{'components.modals.notify.inspection_mode' | translate}}"
+              (click)="setInspectionMode()"
+              [disabled]="inspectionMode">
+        <span class="fa fa-drupal fa-2x"></span>
+      </button>
+      <button *appHasRole="[roles.ADMIN]"
+              name="testerMode" class="btn mr-3 btn-outline-warning rounded-circle"
+              tooltip="{{'components.modals.notify.tester_mode' | translate}}"
+              (click)="setTesterMode()"
+              [disabled]="testerMode || !this.game.timer">
+        <span class="fa fa-clock-o fa-2x"></span>
+      </button>
+    </div>
+    <div class="card-body table-responsive">
+      <table class="table navbar-nav-scroll">
+        <tr *ngFor="let gussetRows of game.gussets">
+          <td *ngFor="let gusset of gussetRows">
+            <div class="image-stack">
+              <div class="item-bottom" [ngClass]="bugfix">
+                <img [@memory-gusset-animation]="frontState[gusset.id]" alt="card"
+                     src="../../../../../assets/images/games/memory/gussets/{{gusset.name}}.png"
+                />
+              </div>
+              <div *ngIf="loggedUser.role == roles.ADMIN" class="item-top">
+                <button [disabled]="disabled" (click)="findOut(gusset)"
+                        [tooltip]="inspectionMode ? 'Name: '.concat(gusset.name) : null"
+                        placement="top" container="body">
+                  <img [@memory-gusset-animation]="backState[gusset.id]" alt="card" class="img-fluid"
+                       [ngClass]="inspectionMode ? 'drupal' : null"
+                       src="../../../../../assets/images/games/memory/home.jpg"/>
+                </button>
+              </div>
+              <div *ngIf="loggedUser.role == roles.GAMER" class="item-top">
+                <button [disabled]="disabled" (click)="findOut(gusset)">
+                  <img [@memory-gusset-animation]="backState[gusset.id]" alt="card" class="img-fluid"
+                       src="../../../../../assets/images/games/memory/home.jpg"/>
+                </button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="card-footer text-center">
+      <i class="fa fa-clock-o"></i>
+      <span *ngIf="!(testerMode || !this.game.timer)"> {{timer | mmss}} </span>
+      <span class="text-success" *ngIf="(testerMode || !this.game.timer)"> {{'features.memory.no_time' | translate}} </span>
+      <span>
+          <i class="fa fa-heart text-danger"></i>
+        {{maxErrors}}
+      </span>
+    </div>
+  </div>
+</div>

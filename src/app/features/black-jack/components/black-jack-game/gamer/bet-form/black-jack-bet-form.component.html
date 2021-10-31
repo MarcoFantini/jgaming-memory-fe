@@ -1,0 +1,10 @@
+<div class="bet-form container p-0" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="row flex-nowrap no-gutters align-items-center">
+    <div class="col mr-2">
+      <input type="text" class="form-control" formControlName="bet">
+    </div>
+    <div class="col col-auto">
+      <button type="submit" class="btn btn-primary btn-sm" [disabled]="form.invalid" (click)="onSubmit()">PUNTA</button>
+    </div>
+  </div>
+</div>

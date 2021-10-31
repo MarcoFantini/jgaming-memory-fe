@@ -1,0 +1,45 @@
+<div class="d-flex justify-content-center">
+  <div class="card card-game">
+    <div class="card-header">
+      {{game.name}}
+    </div>
+    <div class="card-body table-responsive">
+      <table class="table-cell">
+        <tr *ngFor="let cellRow of game.cells; let i= index;">
+          <td *ngFor="let cell of cellRow;let j=index;" (click)="showCell(i,j)">
+            <div class="image-stack">
+              <div class="item-bottom" ngSwitch="{{cellTypes[i][j]}}">
+                <img *ngSwitchCase="types.BOMB" [@hide-show]="frontState[i][j]" alt="card" class="cell-img puffOut"
+                     src="../../../../../assets/images/games/minefield/{{types.BOMB}}.png"/>
+                <img *ngSwitchCase="types.TREASURE" [@hide-show]="frontState[i][j]" alt="card" class="cell-img"
+                     src="../../../../../assets/images/games/minefield/{{types.TREASURE}}.png"/>
+                <img *ngSwitchCase="types.GRASS_ORANGE" [@hide-show]="frontState[i][j]" alt="card" class="cell-img"
+                     src="../../../../../assets/images/games/minefield/{{types.GRASS_ORANGE}}.png"/>
+                <img *ngSwitchCase="types.GRASS_BLACK" [@hide-show]="frontState[i][j]" alt="card" class="cell-img"
+                     src="../../../../../assets/images/games/minefield/{{types.GRASS_BLACK}}.png"/>
+              </div>
+              <div class="item-top">
+                <button class="img-button" (click)="showCell(i,j)">
+                  <img [@hide-show]="backState[i][j]" alt="card"
+                       src="../../../../../assets/images/games/minefield/grass_green.png" class="cell-img "
+                  />
+                </button>
+              </div>
+            </div>
+          </td>
+        </tr
+        >
+      </table>
+    </div>
+    <div class="card-footer d-flex justify-content-between text-center">
+      <div>
+        <i class="fa fa-heart text-danger"></i>
+        <label>{{ lives }} / {{ game.life }}</label>
+      </div>
+      <div>
+        <i class="fa fa-diamond text-warning"></i>
+        {{ treasures }} / {{ game.treasures }}
+      </div>
+  </div>
+</div>
+</div>

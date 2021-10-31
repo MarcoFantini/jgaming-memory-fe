@@ -1,0 +1,21 @@
+/* BASE COLORS */
+$color-1: #138A46;
+$color-2: #04180D;
+$color-3: #000;
+$color-4: #B57A3E;
+$color-5: #FBCD5D;
+$text: #fff;
+
+$black-jack-page-bg: radial-gradient(circle, $color-1 0%, $color-2 50%, $color-3 100%);
+$black-jack-page-text: $text;
+$black-jack-menu-bg: $color-3;
+$black-jack-menu-text: $text;
+$black-jack-menu-border: $color-1;
+$black-jack-button-bg: linear-gradient(0deg, $color-4 0%, $color-5 50%);;
+$black-jack-button-border: $color-4;
+$black-jack-button-bg-hover: linear-gradient(0deg, $color-5 0%, $color-4 90%);
+$black-jack-button-border-hover: $color-5;
+$black-jack-modal-rules-bg: $color-3;
+$black-jack-modal-rules-text: $text;
+$black-jack-scrollbar-bg: $color-1;
+$black-jack-scrollbar-bg-active: $color-3;

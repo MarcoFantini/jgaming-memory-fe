@@ -1,0 +1,3 @@
+<div class="alert mt-3" *ngIf="ack" [ngClass]="{ 'alert-success' : ack.result, 'alert-danger' : !ack.result }">
+  {{ ack.message }}
+</div>

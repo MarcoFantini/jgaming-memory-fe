@@ -1,0 +1,38 @@
+.btn:focus, .btn.focus, button:focus {
+  @include no_outline;
+}
+
+:focus {
+  @include no_outline;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.bs-datepicker-container {
+  padding: 0;
+}
+
+.alert {
+  //@include default_radius;
+
+  &.alert-dismissible .close {
+    padding: 0 0.50rem;
+  }
+}
+
+.invalid-feedback {
+  display: block;
+
+  span {
+    color: $color-error;
+  }
+}
+
+.modal-backdrop.show {
+  opacity: 0.3;
+}

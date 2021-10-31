@@ -1,0 +1,49 @@
+@import "../../../../../styles/palette-minefield";
+@import "../../../../../styles/palette-memory";
+
+p {
+  text-align: center;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.modal-body {
+  position: relative;
+  width: 100%;
+
+  button {
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+
+    .memory-btn {
+      background: $memory-button-bg;
+      border-color: $memory-button-border;
+      border-top-right-radius: 2px;
+      border-top-left-radius: 2px;
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.modal-header {
+  background: $memory-notify-modal-header-bg;
+  color: $memory-notify-modal-header-text;
+
+  .close-memory-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+}

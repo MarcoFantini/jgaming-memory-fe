@@ -1,0 +1,123 @@
+@import "../../../../../styles/palette-minefield";
+@import "../../../../../styles/mixins/mixins";
+
+.card {
+  position: relative;
+  .card-header {
+    background-color: $minefield-card-header-bg;
+    color: $minefield-card-header-text;
+  }
+  .card-body {
+    .cell-img {
+      max-height: 40px;
+      width: 40px;
+    }
+  }
+
+  .card-footer {
+    background-color: $minefield-card-footer-bg;
+    position: relative;
+    text-align: center;
+
+
+    .card-footer-label {
+      padding-left: 3%;
+      margin: 0;
+    }
+  }
+}
+
+.modal-body {
+  position: relative;
+  width: 100%;
+
+  .img {
+    width: 100%;
+    height: auto;
+  }
+
+  .button {
+    position: absolute;
+    top: 0;
+    left: 80%;
+    /*transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);*/
+    background-color: #555;
+    color: $minefield-menu-text;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+}
+
+.table-cell {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  border: none;
+
+  tr {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    border: none;
+
+    td {
+      position: relative;
+      margin: 0 auto;
+      text-align: center;
+      border: none;
+
+      img {
+        border-radius: 15px;
+        width: 40px;
+        height: 40px;
+      }
+
+      .image-stack {
+        display: grid;
+        position: relative;
+
+        .item-top {
+          grid-column: 1 / span 10;
+          grid-row: 1; // deve trovarsi sulla stessa riga dell'altra immagine
+          padding-top: 0; // ciò spinge l'immagine verso il basso e la mantiene proporzionale durante il ridimensionamento
+          z-index: 1; // visualizza questa  immagine davanti dello sfondo
+          .img-button {
+            background: none;
+            color: inherit;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+          }
+        }
+
+        .item-bottom {
+          grid-column: 4 / -1;
+          grid-row: 1; // visualizza questa immagine sulla stessa riga
+        }
+      }
+    }
+  }
+}
+
+.puffOut {
+  animation-name: puffOut;
+  animation-duration: 0.5s;
+}
+@keyframes puffOut {
+  0% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(2, 2);
+    filter: blur(2px);
+  }
+}

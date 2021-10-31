@@ -1,0 +1,66 @@
+<div #blakjack class="game container bg-white rounded p-4 border shadow-sm">
+  <div class="row no-gutters" *ngIf="game">
+    <div class="col d-flex flex-column">
+      <app-blackjack-modal #bjModal></app-blackjack-modal>
+      <div class="row no-gutters">
+        <div class="col d-flex justify-content-center">
+          <app-blackjack-dealer *ngIf="game.dealer" [dealer]="game.dealer"></app-blackjack-dealer>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="row no-gutters " [style.min-height]="'150px'">
+        <div class="col d-flex flex-column">
+          <div class="row flex-grow-1 p-2 no-gutters">
+            <div class="d-flex flex-column justify-content-center col col-sm-2">
+              <app-blackjack-pot [game]="game"></app-blackjack-pot>
+            </div>
+            <div class="col">
+              <app-blackjack-console></app-blackjack-console>
+            </div>
+          </div>
+          <div class="row flex-grow-0">
+            <div class="col d-flex justify-content-center align-items-center">
+              <app-blackjack-countdown
+                *ngIf="game.gamePhase == gamePhaseEnum.WAITING_NEXT_ROUND"
+                [time]="countdownTime"></app-blackjack-countdown>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="my-shadow row border rounded shadow- no-gutters">
+        <div class="col d-flex flex-column align-items-center p-2" *ngFor="let gamer of game.gamers; let index = index">
+          <div *ngIf="waiting && myChair == index">IN ATTESA DELLA PROSSIMA MANO</div>
+          <app-blackjack-gamer
+            #_gamer *ngIf="gamer"
+            [gamer]="gamer"
+            [chair]="index"
+            [game]="game"
+            [selected]="myChair"
+            (gamerAction)="onGamerAction($event)"
+          ></app-blackjack-gamer>
+          <button *ngIf="!myChair" type="button"
+                  class="sit-here-button btn btn-primary btn-sm"
+                  (click)="onClickSitAndPlay(index)">
+            SIEDITI QUI
+          </button>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="row">
+        <div class="col">
+          <button *ngIf="game.gamePhase != gamePhaseEnum.DEALER_PLAY" type="button"
+                  class="btn btn-primary"
+                  (click)="onClickResetGame()">Reset
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

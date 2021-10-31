@@ -1,0 +1,30 @@
+<div class="modal-header memory">
+  <h4 class="text-center">{{modalHeaderClass.charAt(0).toUpperCase() + modalHeaderClass.substr(1)}}</h4>
+  <button type="button" class="close-memory-modal" aria-label="Close" (click)="confirmHandler()">
+    <span aria-hidden="true">x</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div [ngSwitch]="callMode">
+    <img *ngSwitchCase="callModes.WIN" src="assets/images/games/you_win.jpg" alt="">
+    <img *ngSwitchCase="callModes.LOSE" src="assets/images/games/you_lose.png" alt="">
+    <img *ngSwitchCase="callModes.TIMEOUT" src="assets/images/games/timeout.png" alt="">
+    <img *ngSwitchCase="callModes.SURRENDER" src="assets/images/games/surrender.png" alt="">
+    <div *ngSwitchCase="callModes.INSPECTION">
+      <p>
+        {{'components.modals.notify.inspection_mode' | translate}}
+      </p>
+      <button type="button" class="btn btn-success w-25" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">OK</span>
+      </button>
+    </div>
+    <div *ngSwitchCase="callModes.TESTER">
+      <p>
+        {{'components.modals.notify.tester_mode' | translate}}
+      </p>
+      <button type="button" class="btn btn-success w-25" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">OK</span>
+      </button>
+    </div>
+  </div>
+</div>

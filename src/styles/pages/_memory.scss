@@ -1,0 +1,76 @@
+main.memory {
+  background: $memory-page-bg;
+
+  .card {
+    &.card-memory {
+
+      .card-header {
+        background-color: $memory-card-header-bg;
+        color: $memory-card-header-text;
+      }
+
+      .card-body {
+        color: $memory-card-body-text;
+      }
+
+      .card-footer {
+        background-color: $memory-card-footer-bg;
+        color: $memory-card-footer-text;
+      }
+    }
+  }
+
+  form {
+    .form-control:focus {
+      border-color: $memory-form-focus-border;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgb(36 153 206 / 25%);
+    }
+
+    &.required:after {
+      content: "*";
+      color: $memory-required;
+      font-weight: bold;
+    }
+  }
+
+  .btn {
+    &.memory-btn {
+      background: $memory-button-bg;
+      border-color: $memory-button-border;
+
+      &:hover, &:focus, &:active, &.active {
+        background: $memory-button-bg-hover;
+        border-color: $memory-button-border-hover;
+      }
+    }
+
+    &.btn-outline-warning {
+      border: none;
+      background-color: $memory-button-outline-warning-bg;
+
+      &:hover {
+        background-color: $memory-button-outline-warning-bg-hover;
+      }
+    }
+  }
+
+  .memory-text {
+    color: $memory-text-errors;
+  }
+
+  ::-webkit-scrollbar {
+    background-color: $memory-scrollbar-bg;
+    width: 3px;
+    height: 3px;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $memory-scrollbar-bg-active;
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3);
+  }
+}

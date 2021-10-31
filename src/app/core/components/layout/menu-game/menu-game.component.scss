@@ -1,0 +1,33 @@
+@import "../../../../../styles/palette-memory";
+@import "../../../../../styles/palette-minefield";
+@import "../../../../../styles/palette-black-jack";
+@import "../../../../../styles/mixins/mixins";
+
+.menu {
+  &.menu-memory {
+    background: $memory-menu-bg;
+    @include box-shadow(0 3px 5px 0 $memory-menu-border);
+
+    .navbar-brand {
+      color: $memory-menu-text;
+    }
+  }
+
+  &.menu-minefield {
+    background: $minefield-menu-bg;
+    @include box-shadow(0 3px 5px 0 $minefield-menu-border);
+
+    .navbar-brand {
+      color: $minefield-menu-text;
+    }
+  }
+
+  &.menu-blackjack {
+    background: $black-jack-menu-bg;
+    @include box-shadow(0 3px 5px 0 $black-jack-menu-border);
+
+    .navbar-brand {
+      color: $black-jack-menu-text;
+    }
+  }
+}

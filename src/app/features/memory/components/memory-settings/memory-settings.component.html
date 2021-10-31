@@ -1,0 +1,101 @@
+<form class="bg-transparent" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="card card-memory">
+    <div class="card-header">
+      {{'features.memory.settings.title' | translate}}
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label class="required" for="nameFormControl">{{'features.memory.settings.name' | translate}}</label>
+            <input type="text" class="form-control" id="nameFormControl"
+                   placeholder="{{'features.memory.settings.name_placeholder' | translate}}"
+                   formControlName="name">
+            <small *ngIf="submitted && f.name.errors?.required" class="memory-text">
+              {{ 'features.memory.settings.name_required' | translate }}
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label class="required" for="columnsFormControl"> {{'features.memory.settings.columns' | translate}}</label>
+            <input type="text" class="form-control" id="columnsFormControl"
+                   placeholder="{{'features.memory.settings.columns_placeholder' | translate}}"
+                   formControlName="columns">
+            <small *ngIf="submitted && f.columns.errors?.required" class="memory-text">
+              {{ 'features.memory.settings.columns_required' | translate }}
+            </small>
+            <small *ngIf="!validConfig" class="memory-text">
+              {{ 'features.memory.settings.invalid_configuration' | translate }}
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label class="required" for="rowsFormControl"> {{'features.memory.settings.rows' | translate}}</label>
+            <input type="text" class="form-control" id="rowsFormControl"
+                   placeholder="{{'features.memory.settings.rows_placeholder' | translate}}"
+                   formControlName="rows">
+            <small *ngIf="submitted && f.rows.errors?.required" class="memory-text">
+              {{ 'features.memory.settings.columns_required' | translate }}
+            </small>
+            <small *ngIf="!validConfig" class="memory-text">
+              {{ 'features.memory.settings.invalid_configuration' | translate }}
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label class="required" for="maxErrorsFormControl"> {{'features.memory.settings.maxErrors' | translate}}</label>
+            <input type="text" class="form-control" id="maxErrorsFormControl"
+                   placeholder="{{'features.memory.settings.maxErrors_placeholder' | translate }}"
+                   formControlName="maxErrors">
+            <small *ngIf="submitted && f.maxErrors.errors?.required" class="memory-text">
+              {{ 'features.memory.settings.maxErrors_required' | translate }}
+            </small>
+            <small *ngIf="!errorPlayable" class="memory-text">
+              {{ 'features.memory.settings.not_error_playable' | translate }}
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label class="required" for="victoryPointsFormControl">{{'features.memory.settings.victoryPoints' | translate}}</label>
+            <input type="text" class="form-control" id="victoryPointsFormControl"
+                   placeholder="{{'features.memory.settings.victoryPoints_placeholder' | translate}}"
+                   formControlName="victoryPoints">
+            <small *ngIf="submitted && f.victoryPoints.errors?.required" class="memory-text">
+              {{ 'features.memory.settings.victoryPoints_required' | translate }}
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label class="required" for="timerFormControl">{{'features.memory.settings.timer' | translate}}</label>
+            <input type="text" class="form-control" id="timerFormControl"
+                   placeholder="{{ 'features.memory.settings.timer_placeholder' | translate }}" formControlName="timer">
+            <small *ngIf="submitted && f.timer.errors?.required" class="memory-text">
+              {{ 'features.memory.settings.timer_required' | translate }}
+            </small>
+            <small *ngIf="!timePlayable" class="memory-text">
+              {{ 'features.memory.settings.not_time_playable' | translate }}
+              ( >= {{this.TMin}})
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-center">
+      <button class="btn memory-btn mr-2" type="submit" >
+        <i class="fa fa-save"></i>
+        {{'components.buttons.save' | translate}}
+      </button>
+      <button class="btn memory-btn" type="button" (click)="backHandler()">
+        <i class="fa fa-undo"></i>
+        {{ 'components.buttons.undo' | translate }}
+      </button>
+    </div>
+  </div>
+</form>

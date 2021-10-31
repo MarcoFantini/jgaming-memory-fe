@@ -1,0 +1,37 @@
+@import "../../../../styles/palette-minefield";
+@import "../../../../styles/mixins/mixins";
+
+main.minefield {
+  background: $minefield-page-bg;
+
+  #minefield-page {
+    color: $minefield-page-text;
+    height: 100%;
+
+    .minefield-btn {
+      background: $minefield-button-bg;
+      border-color: $minefield-button-border;
+
+      &:hover, &:focus, &:active, &.active {
+        background: $minefield-button-bg-hover;
+        border-color: $minefield-button-border-hover;
+      }
+    }
+  }
+
+  ::-webkit-scrollbar {
+    background-color: $minefield-scrollbar-bg;
+    width: 3px;
+    height: 3px;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $minefield-scrollbar-bg-active;
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3);
+  }
+
+}

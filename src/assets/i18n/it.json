@@ -1,0 +1,217 @@
+{
+  "components": {
+    "form": {
+      "required_field": "Campo Obbligatorio",
+      "invalid_field": "Campo Invalido",
+      "invalid_mail": "Campo 'Email' Invalido",
+      "mail_required": "Campo 'Email' Obbligatorio",
+      "object_required": "Campo 'Oggetto' Obbligatorio",
+      "message_required": "Campo 'Messaggio' Obbligatorio"
+    },
+    "buttons": {
+      "rules": "Regole del Gioco",
+      "undo": "Annulla",
+      "save": "Salva",
+      "send": "Invia",
+      "home": "Home",
+      "back": "Indietro",
+      "play": "Gioca",
+      "login": "Login",
+      "register": "Registrati",
+      "confirm": "Conferma"
+    },
+    "layout": {
+      "menu": {
+        "title": "jGaming",
+        "signup": "Registrati",
+        "contacts": "Contattaci",
+        "logout": "Logout",
+        "home": "Home",
+        "flags": {
+          "it": "Italiano",
+          "en": "Inglese"
+        }
+      },
+      "footer": {
+        "links": {
+          "terms": "Termini e Condizioni",
+          "sitemap": "Mappa",
+          "privacy": "Privacy",
+          "policy": "Policy"
+        },
+        "text": "Copyright &#169; 2021 jPanik S.r.l. P.IVA 11044071006 Via Franco Donatelli, 7 - 00127 Roma (Italy)",
+        "social": {
+          "facebook": {
+            "url": "https://www.facebook.com/jpaniksrl",
+            "title": "Facebook"
+          },
+          "twitter": {
+            "url": "https://twitter.com/JPanikSrl",
+            "title": "Twitter"
+          },
+          "pinterest": {
+            "url": "https://it.pinterest.com/jpaniks/",
+            "title": "Pinterest"
+          },
+          "linkedin": {
+            "url": "https://www.linkedin.com/company/jpanik-srl",
+            "title": "LinkedIn"
+          }
+        }
+      },
+      "rank": {
+        "header": {
+          "index": "#",
+          "username": "Username",
+          "score": "Punteggio",
+          "ranking": "Classifica"
+        }
+      }
+    },
+    "modals": {
+      "notify": {
+        "inspection_mode": "Modalità Ispezione! In questa modalità non finirai in classifica.",
+        "tester_mode": "Modalità Tester! In questa modalità non finirai in classifica.",
+        "edit_instance": "Istanza di Gioco Modificata con Successo!",
+        "new_instance": "Nuova Istanza di Gioco Salvata con Successo!",
+        "duplicate": "Attenzione! Il nome inserito è già stato preso!"
+      },
+      "confirm": {
+        "title": "Conferma dell'Operazione"
+      },
+      "rules": {
+        "title": "Regole del gioco"
+      }
+    }
+  },
+  "features": {
+    "home": {
+      "login": {
+        "text": "<strong class=\"text-theme\">jGaming</strong> &egrave; una piattaforma di giochi online sviluppata totalmente da studenti universitari alle prime armi.<hr><strong>Accedi</strong> o <strong>registrati</strong> per iniziare a divertirti con noi!",
+        "username": "Username",
+        "password": "Password"
+      }
+    },
+    "blackjack": {
+      "sithere": "SIEDITI QUI",
+      "waitNextRound": "IN ATTESA DEL PROSSIMO ROUND",
+      "Reset": "RESET",
+      "balance": "SALDO",
+      "countdownText": "Prossima mano tra: ",
+      "gamer": {
+        "setBet": "PUNTA",
+        "callCard": "CHIAMA CARTA",
+        "check": "PASSA LA MANO",
+        "leaveGame": "LASCIA IL GIOCO",
+        "loseHand": "HAI PERSO LA MANO"
+      },
+      "modal": {
+        "newRound": "NUOVO ROUND",
+        "dealerPlay": "IL BANCO GIOCA",
+        "countingCard": "CONTEGGIO CARTE"
+      }
+    },
+    "memory": {
+      "footer_user": "<i class='fa fa-user mr-2'></i><strong>Marco Fantini</strong>",
+      "footer_university": "<i class='fa fa-university mr-2'></i><strong>Università degli Studi Roma Tre</strong>",
+      "no_time": "Illimitato",
+      "surrender": "Mi Arrendo",
+      "play": "Gioca !",
+      "lobby": {
+        "title": "Lobby",
+        "no_instances": "Nessuna istanza di gioco trovata",
+        "new_configuration": "Nuova Configurazione",
+        "card_footer": "<i class='fa fa-gamepad mr-2'></i>Scegli l'istanza di gioco a cui vuoi giocare!",
+        "name": "Nome",
+        "level": {
+          "easy": "Facile",
+          "medium": "Medio",
+          "hard": "Difficile"
+        }
+      },
+      "settings": {
+        "rules": "Tutte le tessere vengono disposte coperte sul tavolo. A turno il giocatore gira due tessere rendendole visibili. Lo scopo è quello di abbinare un’immagine con la sua corrispondente nascosta fra le altre: se le due tessere girate costituiscono una coppia il giocatore acquista una vita e può continuare a giocare; se le due tessere non rappresentano la stessa frazione deve rigirarle e perde una vita. Il gioco termina quando non ci sono più tessere sul tavolo e vengono assegnati i punti in base al gioco scelto. Attenzione in alcuni giochi 'il tempo scorre!'",
+        "title": "Configurazione",
+        "name": "Nome dell' istanza",
+        "name_placeholder": "es.Troppe Coppie, addio!",
+        "name_required": "Nome dell' istanza obbligatorio",
+        "columns": "Numero di colonne",
+        "columns_placeholder": "es.5",
+        "columns_required": "Numero di colonne obbligatorio",
+        "rows": "Numero di righe",
+        "rows_placeholder": "es.4",
+        "rows_required": "Numero di righe obbligatorio",
+        "timer": "Tempo in millisecondi",
+        "timer_placeholder": "es.60000 (1 min)",
+        "timer_required": "Tempo in millisecondi obbligatorio",
+        "maxErrors": "Numero massimo di errori",
+        "maxErrors_placeholder": "es.10",
+        "maxErrors_required": "Numero massimo di errori obbligatorio",
+        "maxErrors_low": "Numero massimo di errori troppo basso",
+        "victoryPoints": "Punti Vittoria",
+        "victoryPoints_placeholder": "Punti Vittoria",
+        "victoryPoints_required": "Punti Vittoria Obbligatorio",
+        "invalid_configuration": "Configurazione non valida!",
+        "not_error_playable": "Numero di Errori troppo basso, renderebbe non-giocabile l'istanza",
+        "not_time_playable": "Tempo insufficiente a girare tutti i Tasselli, renderebbe non-giocabile l'istanza",
+        "delete_message": "Sei sicuro di voler cancellare l' istanza?"
+      }
+    },
+    "minefield": {
+      "footer_user": "<i class='fa fa-user mr-2'></i><strong>Jacopo Cervellini</strong>",
+      "footer_university": "<i class='fa fa-university mr-2'></i><strong>Università degli Studi Roma Tre</strong>",
+      "lobby": {
+        "title": "Lobby",
+        "no_instances": "Nessuna istanze di gioco trovata",
+        "new_configuration": "Nuova Configurazione",
+        "name": "Nome",
+        "card_footer": "<i class='fa fa-gamepad mr-2'></i>Scegli l'istanza di gioco a cui vuoi giocare!",
+        "level": {
+          "easy": "Facile",
+          "medium": "Medio",
+          "hard": "Difficile"
+        }
+      },
+      "settings": {
+        "title": "Configurazione",
+        "columns": "Numero di righe/colonne",
+        "columns_placeholder": "es.7",
+        "bombs": "Numero di bombe",
+        "bombs_placeholder": "es.7",
+        "life": "Numero di vite",
+        "life_placeholder": "es.5",
+        "treasures": "Numero di tesori",
+        "treasures_placeholder": "es.3",
+        "name": "Nome dell' istanza",
+        "name_placeholder": "es.Più bombe che tesori, auguri!",
+        "name_required": "Nome dell' istanza obbligatorio",
+        "columns_required": "Numero di colonne/righe obbligatorio",
+        "bombs_required": "Numero di bombe obbligatorio",
+        "treasures_required": "Numero di tesori obbligatorio",
+        "life_required": "Numero di vite obbligatorio",
+        "rules": "Il campo di gioco consiste in un campo quadrato a sua volta suddiviso in tante piccole celle contenenti erbetta verde. Quando viene cliccata un'erbetta verde, se contiene un tesoro viene svelato e il contatore dei tesori aumentato, se invece contiene una bomba, TUTTE le celle adiacenti alla bomba vengono svelate e viene decrementato il contatore delle vite.Se una cella non contenente una bomba o un tesoro viene svelata, questa diventerà arancione se le celle adiacenti ad essa contengono bombe altimenti diventerà bianca.Il gioco finisce quando sono stati trovati tutti i tesori (vincendo) o quando li vite sono finite (perdendo).",
+        "bombs_error": "Il numero di Bombe non è valido! Dai un'occhiata al numero totale di celle!",
+        "treasures_error": "Il numero di Tesori non è valido! Dai un'occhiata al numero totale di celle!",
+        "lives_error": "Il numero di vite deve essere diverso da zero"
+      }
+    },
+    "signup": {
+      "title": "Registrati",
+      "username": "Username",
+      "email": "Email",
+      "password": "Password",
+      "presentation": "Presentazione"
+    },
+    "contact": {
+      "title": "Contattaci",
+      "success": "Grazie per la segnalazione! Il nostro team prenderà in carico la vostra richiesta!",
+      "danger": "Qualcosa è andato storto! Controlla di aver inserito bene tutti i campi!",
+      "email": "Email",
+      "object": "Oggetto",
+      "message": "Messaggio"
+    },
+    "errors": {
+      "invalid_credentials": "Credenziali non Valide!"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.balance-anim {
+  position: absolute;
+  animation-name: ascension;
+  animation-duration: 3s;
+
+  &--red {
+    color: red;
+  }
+
+  &--green {
+    color: green;
+  }
+}
+
+@keyframes ascension {
+  from {
+    bottom: 0px;
+    opacity: 1;
+  }
+  to {
+    bottom: 100px;
+    opacity: 0;
+  }
+}

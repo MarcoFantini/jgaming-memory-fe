@@ -1,0 +1,38 @@
+/* BASE COLORS */
+$color-1: #b91957;
+$color-2: #461030;
+$color-3: #21152D;
+$color-4: #BC5DB9;
+$color-5: #BF96D3;
+$text: #fff;
+
+$minefield-required: $color-1;
+$minefield-page-bg: radial-gradient(circle, $color-1 0%, $color-2 50%, $color-3 100%);
+$minefield-page-text: $text;
+$minefield-menu-bg: $color-3;
+$minefield-menu-border: $color-1;
+$minefield-menu-text: $text;
+$minefield-footer-bg: $color-3;
+$minefield-footer-border: $color-1;
+$minefield-footer-text: $text;
+$minefield-button-bg: linear-gradient(0deg, $color-4 0%, $color-5 50%);;
+$minefield-button-border: $color-4;
+$minefield-button-bg-hover: linear-gradient(0deg, $color-5 0%, $color-4 90%);
+$minefield-button-border-hover: $color-5;
+$minefield-rank-bg: radial-gradient(circle, $color-1 0%, $color-2 50%, $color-3 100%);
+$minefield-rank-text: $color-4;
+$minefield-rank-border: $color-4;
+$minefield-lobby-header-bg: $color-3;
+$minefield-lobby-header-text: $text;
+$minefield-lobby-text: $color-4;
+$minefield-modal-rules-bg: $color-3;
+$minefield-modal-rules-text: $text;
+$minefield-scrollbar-bg: $color-1;
+$minefield-scrollbar-bg-active: $color-3;
+$minefield-card-header-bg: $color-3;
+$minefield-card-header-text: $text;
+$minefield-card-body-text: $color-1;
+$minefield-card-body-table-thead-text: $text;
+$minefield-card-footer-bg: $color-3;
+$minefield-notify-modal-header-bg: $color-3;
+$minefield-notify-modal-header-text: $text;

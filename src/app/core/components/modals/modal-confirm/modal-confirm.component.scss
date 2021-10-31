@@ -1,0 +1,9 @@
+@import "../../../../../styles/palette-minefield";
+@import "../../../../../styles/palette-memory";
+
+.modal-header {
+  &.memory {
+    background: $memory-notify-modal-header-bg;
+    color: $memory-notify-modal-header-text;
+  }
+}

@@ -1,0 +1,37 @@
+@import "../../../../../styles/palette-minefield";
+@import "../../../../../styles/palette-memory";
+@import "../../../../../styles/palette-black-jack";
+
+.modal-header {
+  button {
+    color: $text;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 25px;
+  }
+
+  &.memory {
+    background: $memory-modal-rules-bg;
+    color: $memory-modal-rules-text;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+  }
+
+  &.blackjack {
+    background: $black-jack-modal-rules-bg;
+    color: $black-jack-modal-rules-text;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+  }
+
+  &.minefield {
+    background: $minefield-modal-rules-bg;
+    color: $minefield-modal-rules-text;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+  }
+}
+
+.modal-body {
+  overflow: auto;
+}

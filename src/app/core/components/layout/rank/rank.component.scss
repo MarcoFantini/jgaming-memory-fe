@@ -1,0 +1,70 @@
+@import "../../../../../styles/palette-minefield";
+@import "../../../../../styles/palette-black-jack";
+@import "../../../../../styles/palette-memory";
+
+.card {
+
+  .card-header {
+    text-align: center;
+    color: white;
+
+    &.card-header-minefield {
+      background: $minefield-menu-bg;
+    }
+
+    &.card-header-memory {
+      background: $memory-menu-bg;
+    }
+
+    &.card-header-blackjack {
+      background: $black-jack-menu-bg;
+    }
+  }
+
+  .card-body {
+    height: 20%;
+    overflow: auto;
+
+    .table {
+      tbody tr td {
+        vertical-align: middle;
+      }
+
+      &.table-minefield {
+        background-color: $minefield-rank-bg;
+        color: $minefield-rank-text;
+        border: solid 2px $minefield-rank-border;
+        border-radius: 10px;
+
+        th {
+          border-bottom: solid 2px $minefield-rank-border;
+        }
+      }
+
+      &.table-blackjack {
+        background-color: $black-jack-page-bg;
+        color: $black-jack-menu-border;
+        border: solid 2px $black-jack-menu-border;
+        border-radius: 10px;
+
+        th {
+          color: $black-jack-menu-border;
+          border-bottom: solid 2px $black-jack-menu-border;
+        }
+      }
+
+      &.table-memory {
+        background-color: $memory-page-bg;
+        color: $memory-menu-border;
+        border: solid 2px $memory-menu-border;
+
+        th {
+          color: $memory-menu-border;
+          border-bottom: solid 2px $memory-menu-border;
+        }
+      }
+    }
+  }
+}
+
+

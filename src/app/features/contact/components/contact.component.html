@@ -1,0 +1,52 @@
+<app-menu></app-menu>
+<div class="alert" [ngSwitch]="type">
+  <alert *ngSwitchCase="alertTypes.SUCCESS" [type]="type.toString()" dismissible="true" (onClosed)="onClosed()">
+    {{ 'features.contact.success' | translate }}
+  </alert>
+  <alert *ngSwitchCase="alertTypes.DANGER" [type]="type.toString()" dismissible="true" (onClosed)="onClosed()">
+    {{ 'features.contact.danger' | translate }}
+  </alert>
+</div>
+<div class="container mt-5">
+  <div class="media">
+    <img src="assets/images/backgrounds/contacts.jpg" alt="contacts">
+    <div class="media-body text-center">
+      <form class="p-4 h-100" [formGroup]="form" (ngSubmit)="contactHandler()">
+        <fieldset>
+          <legend>{{'features.contact.title' | translate}}</legend>
+          <hr>
+          <div class="form-group">
+            <label for="email" class="form-label required">{{'features.contact.email' | translate}}</label>
+            <input type="email" class="form-control" id="email" formControlName="email"/>
+            <small *ngIf="submitted && f.email.errors?.required" class="text-theme">
+              {{ 'components.form.mail_required' | translate }}
+            </small>
+            <small *ngIf="submitted && f.email.errors?.email" class="text-theme">
+              {{ 'components.form.invalid_mail' | translate }}
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="object" class="required">{{'features.contact.object' | translate}}</label>
+            <input type="text" class="form-control" id="object" formControlName="object">
+            <small *ngIf="submitted && f.mailObject.errors?.required" class="text-theme">
+              {{ 'components.form.object_required' | translate }}
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="message" class="required">{{'features.contact.message' | translate}}</label>
+            <textarea class="form-control" id="message" rows="3" formControlName="message"></textarea>
+            <small *ngIf="submitted && f.text.errors?.required" class="text-theme">
+              {{ 'components.form.message_required' | translate }}
+            </small>
+          </div>
+
+          <button type="submit" class="btn btn-custom">
+            <i class="fa fa-send"></i>
+            {{ 'components.buttons.send' | translate }}
+          </button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

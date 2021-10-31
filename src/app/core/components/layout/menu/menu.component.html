@@ -1,0 +1,58 @@
+<nav class="menu navbar navbar-expand">
+  <a class="navbar-brand" href="#">
+    <img src="favicon.ico" class="img-fluid" alt="icon">
+    <strong class="pl-5">{{ 'components.layout.menu.title' | translate }}</strong>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav text-center mr-auto">
+      <li *ngFor="let flag of flags">
+        <img
+                [src]="'assets/images/flags/' + flag + '.png'"
+                [tooltip]="'components.layout.menu.flags.' + flag | translate"
+                (click)="changeLanguageHandler(flag)"
+                placement="bottom"
+                class="img-fluid pr-2 pointer"
+                [alt]="flag"
+        >
+      </li>
+    </ul>
+    <ul class="navbar-nav flags">
+      <li class="nav-item">
+        <a class="nav-link">
+          <a class="btn btn-custom btn-sm" [routerLink]="['/']">
+            <i class="fa fa-home"></i>
+            {{ 'components.layout.menu.home' | translate }}
+          </a>
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="!isUserLogged()">
+        <a class="nav-link">
+          <a class="btn btn-custom btn-sm" [routerLink]="['/signup']">
+            <i class="fa fa-user"></i>
+            {{ 'components.layout.menu.signup' | translate }}
+          </a>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <a class="btn btn-custom btn-sm" [routerLink]="['/contact']">
+            <i class="fa fa-envelope"></i>
+            {{ 'components.layout.menu.contacts' | translate }}
+          </a>
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="isUserLogged()">
+        <a class="nav-link">
+          <a class="btn btn-custom btn-sm" (click)="onClickLogout()">
+            <i class="fa fa-sign-out"></i>
+            {{ 'components.layout.menu.logout' | translate }}
+          </a>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

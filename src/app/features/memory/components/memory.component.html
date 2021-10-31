@@ -1,0 +1,43 @@
+<div id="memory-page" class="h-100">
+  <app-menu-game
+    [hideHome]="pageStatus !== pageStatuses.LOBBY"
+    [gameType]="gameType"
+  >
+  </app-menu-game>
+  <div class="container-fluid mt-3 pb-3">
+    <div class="row" *ngIf="pageStatus === pageStatuses.LOBBY">
+      <div class="col-lg-8 col-12">
+        <app-memory-instance
+          [instances]="instances"
+          (new)="newHandler()"
+          (edit)="editHandler($event)"
+          (delete)="deleteHandler($event)"
+          (play)="playHandler($event)"
+        >
+        </app-memory-instance>
+      </div>
+      <div class="col-lg-4 mt-lg-0 mt-3 col-12">
+        <app-rank [gameType]="gameType"></app-rank>
+      </div>
+    </div>
+    <div class="row" *ngIf="pageStatus === pageStatuses.CONFIGURATION">
+      <div class="col-12">
+        <app-memory-settings
+          [instance]="selectedInstance"
+          (back)="backHandler()"
+          (edit)="editInstance($event)"
+          (save)="saveNewInstance($event)">
+        </app-memory-settings>
+      </div>
+    </div>
+    <div class="row" *ngIf="pageStatus === pageStatuses.GAME">
+      <div class="col-12">
+        <app-memory-game (back)="backHandler()"
+                         (rank)="saveNewRank($event)"
+                         [game]="game"
+                         [loggedUser]="loggedUser"></app-memory-game>
+      </div>
+    </div>
+  </div>
+  <app-footer-game [gameType]="gameType"></app-footer-game>
+</div>

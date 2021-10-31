@@ -1,0 +1,95 @@
+<div class="card gamer">
+  <div class="card-header px-2 py-0 d-flex justify-content-center">
+    {{gamer.username}}
+  </div>
+  <div class="card-body p-2 cards-container">
+    <div class="row no-gutters pb-2 px-2">
+      <div class="cards-container d-flex flex-column align-items-center col"
+           [style.height]="((50 * gamer.cards.length) + 101).toString()+'px'">
+        <div class="row no-gutters" *ngFor="let card of gamer.cards" [style.max-height]="'50px'">
+          <div class="col">
+            <app-blackjack-card [card]="card"></app-blackjack-card>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="isGamerTurn()">
+      <div class="col">
+        <div class="gamer-action row no-gutters"
+             *ngIf="getGamePhase() == gamePhaseEnum.GAMERS_PLAY && computeGamerPoints() <= 21">
+          <button type="button" class="btn btn-primary btn-block" (click)="onClickCheck()">Stai</button>
+          <button type="button" class="btn btn-primary btn-block" (click)="onClickCallCard()">Chiama carta</button>
+        </div>
+      </div>
+    </div>
+
+    <app-blackjack-bet-form *ngIf="getGamePhase() == gamePhaseEnum.SETTING_BETS" [gamer]="gamer"
+                            (submitBet)="onSubmitBet($event)"></app-blackjack-bet-form>
+  </div>
+
+  <div class="card-footer px-2 py-0">
+    <div class="row no-gutters">
+      <div class="col col-auto">
+        saldo:&nbsp;
+      </div>
+      <div class="col col-auto">
+        <app-blackjack-balance-anim #balanceAnim></app-blackjack-balance-anim>
+        {{gamer.balance}}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--<div class="container d-flex flex-column border">
+  <div class="row flex-nowrap p-2">
+    <div class="col cards-container p-0" [style.height]="((50 * gamer.cards.length) + 101).toString()+'px'">
+      <div class="row no-gutters" *ngFor="let card of gamer.cards" [style.max-height]="'50px'">
+        <div class="col">
+          <app-blackjack-card [card]="card"></app-blackjack-card>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="col">
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col col-auto">
+          saldo:
+        </div>
+        <div class="col col-auto">
+          <app-blackjack-balance-anim #balanceAnim></app-blackjack-balance-anim>
+          {{gamer.balance}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" *ngIf="isGamerTurn()">
+          <div class="row" *ngIf="getGamePhase() == gamePhaseEnum.SETTING_BETS">
+            <div class="col">
+              <app-blackjack-bet-form [gamer]="gamer" (submitBet)="onSubmitBet($event)"></app-blackjack-bet-form>
+            </div>
+          </div>
+          <div class="row" *ngIf="getGamePhase() == gamePhaseEnum.GAMERS_PLAY && computeGamerPoints() <= 21">
+            <div class="col">
+              <div class="row mb-2">
+                <div class="col">
+                  <button type="button" class="btn btn-primary btn-sm" (click)="onClickCallCard()">Chiama carta</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <button type="button" class="btn btn-primary btn-sm" (click)="onClickCheck()">Passa il turno</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col" *ngIf="computeGamerPoints() > 21">
+          HAI PERSO LA MANO
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->

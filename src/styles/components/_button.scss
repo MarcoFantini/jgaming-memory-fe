@@ -1,0 +1,17 @@
+.btn-custom {
+  background: $default-button-bg;
+  border-color: $default-button-border;
+  color: $default-button-text;
+
+  &:hover, &:focus, &:active, &.active {
+    background: $default-button-bg-hover;
+    border-color: $default-button-border-hover;
+    color: $default-button-text-hover;
+  }
+
+  &.selected {
+    background: $default-button-bg-selected;
+    border-color: $default-button-border-selected;
+    color: $default-button-text-selected;
+  }
+}

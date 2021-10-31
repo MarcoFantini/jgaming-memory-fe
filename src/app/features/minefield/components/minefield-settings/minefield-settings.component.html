@@ -1,0 +1,86 @@
+<form class="bg-transparent" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="card card-minefield">
+    <div class="card-header">
+      {{'features.minefield.settings.title' | translate}}
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label class="required" for="nameFormControl">{{'features.minefield.settings.name' | translate}}</label>
+            <input type="text" class="form-control" id="nameFormControl"
+                   placeholder="{{'features.minefield.settings.name_placeholder' | translate}}"
+                   formControlName="name">
+            <small *ngIf="submitted && f.name.errors?.required" class="text-danger">
+              {{ 'features.minefield.settings.name_required' | translate }}
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="columnsFormControl" class="required"> {{'features.minefield.settings.columns' | translate}}</label>
+            <input type="text" class="form-control" id="columnsFormControl"
+                   placeholder="{{'features.minefield.settings.columns_placeholder' | translate}}"
+                   formControlName="columns">
+            <small *ngIf="submitted && f.columns.errors?.required" class="text-danger">
+              {{ 'features.minefield.settings.columns_required' | translate }}
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="bombsFormControl" class="required"> {{'features.minefield.settings.bombs' | translate}}</label>
+            <input type="text" class="form-control" id="bombsFormControl"
+                   placeholder="{{'features.minefield.settings.bombs_placeholder' | translate }}"
+                   formControlName="bombs">
+            <small *ngIf="submitted && f.bombs.errors?.required" class="text-danger">
+              {{ 'features.minefield.settings.bombs_required' | translate }}
+            </small>
+            <small *ngIf="!cellError" class="text-danger">
+              {{ 'features.minefield.settings.bombs_error' | translate }}
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="treasureFormControl" class="required">{{'features.minefield.settings.treasures' | translate}}</label>
+            <input type="text" class="form-control" id="treasureFormControl"
+                   placeholder="{{'features.minefield.settings.treasures_placeholder' | translate}}"
+                   formControlName="treasures">
+            <small *ngIf="submitted && f.treasures.errors?.required" class="text-danger">
+              {{ 'features.minefield.settings.treasures_required' | translate }}
+            </small>
+            <small *ngIf="!cellError" class="text-danger">
+              {{ 'features.minefield.settings.treasures_error' | translate }}
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="lifeFormControl" class="required">{{'features.minefield.settings.life' | translate}}</label>
+            <input type="text" class="form-control" id="lifeFormControl"
+                   placeholder="{{'features.minefield.settings.life_placeholder' | translate}}" formControlName="life">
+            <small *ngIf="submitted && f.life.errors?.required" class="text-danger">
+              {{ 'features.minefield.settings.life_required' | translate }}
+            </small>
+            <small *ngIf="!lifeError" class="text-danger">
+              {{ 'features.minefield.settings.lives_error' | translate }}
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-center">
+      <button class="btn  minefield-btn mr-2" type="submit">
+        <i class="fa fa-save"></i>
+        {{ 'components.buttons.save' | translate }}
+      </button>
+      <button class="btn pointer minefield-btn" type="button" (click)="backHandler()">
+        <i class="fa fa-undo"></i>
+        {{ 'components.buttons.undo' | translate }}
+      </button>
+    </div>
+  </div>
+</form>

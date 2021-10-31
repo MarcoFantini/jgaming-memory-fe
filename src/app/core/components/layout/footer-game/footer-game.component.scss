@@ -1,0 +1,25 @@
+@import "../../../../../styles/palette-memory";
+@import "../../../../../styles/palette-minefield";
+@import "../../../../../styles/palette-black-jack";
+@import "../../../../../styles/mixins/mixins";
+
+footer {
+  padding: 0.5rem 1rem;
+  line-height: 30px;
+
+  &.footer-memory {
+    background: $memory-footer-bg;
+    color: $memory-footer-text;
+    @include box-shadow(3px 0 5px 0 $memory-footer-border);
+  }
+
+  &.footer-minefield {
+    background: $minefield-footer-bg;
+    color: $minefield-footer-text;
+    @include box-shadow(3px 0 5px 0 $minefield-footer-border);
+  }
+}
+
+
+
+
